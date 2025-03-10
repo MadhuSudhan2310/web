@@ -1,11 +1,9 @@
 body {
   font-family: Arial, sans-serif;
   padding: 0;
-  line-height: 1.6;
   background-color: #f4f4f4;
-  margin-bottom: 60px;
-  gap: 60px;
-  line-height: 1.6;
+  margin-bottom: 80px;
+  gap: 100px;
 }
 
 nav {
@@ -112,8 +110,8 @@ h2 {
         max-width: 1200px;
         margin: 20px;
         padding: 20px;
-        height: 100vh;
-        margin-bottom: 60px;
+        height: 140vh;
+        margin-bottom: 100px;
         font-family: sans-serif;
       }
   
