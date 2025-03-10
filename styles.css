@@ -2,7 +2,6 @@ body {
   font-family: Arial, sans-serif;
  max-width:1000vh;
 }
-
 nav {
     background-color: hsl(257, 93%, 50%);
     overflow: hidden;
