@@ -5,6 +5,7 @@ body {
   background-color: #f4f4f4;
   margin-bottom: 60px;
   gap: 60px;
+  line-height: 1.6;
 }
 
 nav {
@@ -180,8 +181,8 @@ h2 {
         }
       }
       #madhu{
-        gap:30px;
-        margin-bottom: 60px;
+        gap:80px;
+        margin-bottom: 100px;
         
         height: 100vh;
 
