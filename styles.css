@@ -31,6 +31,7 @@ nav {
   text-align: center;
   font-weight: bold;
   font-size: xx-large;
+   max-width: 100%;
 }
 .container h4,h2{
   border-right: 1px solid white;
@@ -174,10 +175,12 @@ h2 {
         .internship-card {
           width: 100%;
         }
-      }
+        #project{
+           max-width: 100%;
+        }
       #madhu{
         height: 100vh;
- max-width: 100%;
+      max-width: 100%;
       }
       .animated-color {
         font-size: 2em;
