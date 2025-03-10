@@ -1,9 +1,10 @@
 body {
   font-family: Arial, sans-serif;
   padding: 0;
+  line-height: 1.6;
   background-color: #f4f4f4;
-  margin-bottom: 80px;
-  gap: 100px;
+  margin-bottom: 20px;
+  gap: 20px;
 }
 
 nav {
@@ -108,10 +109,9 @@ h2 {
       .internship {
         width: 80%;
         max-width: 1200px;
-        margin: 20px;
+        margin: 20px auto;
         padding: 20px;
-        height: 140vh;
-        margin-bottom: 100px;
+        height: 200vh;
         font-family: sans-serif;
       }
   
@@ -179,9 +179,6 @@ h2 {
         }
       }
       #madhu{
-        gap:80px;
-        margin-bottom: 100px;
-        
         height: 100vh;
 
       }
@@ -247,7 +244,6 @@ h2 {
       }
       #final{
         height: 80vh;
-        margin-bottom: 60px;
 
       }
       .conta {
