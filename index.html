@@ -3,110 +3,838 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <title>Madhu Sudhan Mangali - Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    :root {
+      --primary-color: #4a00e0;
+      --secondary-color: #8e2de2;
+      --accent-color: #22ff00;
+      --text-color: #333;
+      --light-text: #f8f9fa;
+      --dark-bg: #121212;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Navigation */
+    nav {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    nav.scrolled {
+      padding: 5px 0;
+      background: rgba(74, 0, 224, 0.95);
+    }
+    
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 18px 22px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+    
+    /* Home Section */
+    #home {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('c.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    
+    .container {
+      max-width: 800px;
+      padding: 0 20px;
+      animation: fadeIn 1.5s ease;
+    }
+    
+    .container h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .container h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: var(--accent-color);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .typing-text {
+      border-right: 3px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: white }
+    }
+    
+    .my-button {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      border: none;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 20px 5px;
+      cursor: pointer;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(34, 255, 0, 0.4);
+    }
+    
+    .my-button:hover {
+      background-color: #1fd655;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(34, 255, 0, 0.6);
+    }
+    
+    .my-button a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    
+    /* About Section */
+    #about {
+      padding: 100px 0;
+      background-color: #f8f9fa;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      font-weight: 700;
+      color: var(--primary-color);
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      margin: 15px auto;
+      border-radius: 2px;
+    }
+    
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+    
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease;
+    }
+    
+    .about-image:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.1);
+    }
+    
+    /* Skills Section */
+    #skills {
+      padding: 100px 0;
+      background-color: white;
+    }
+    
+    .skills-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .skill-card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .skill-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+    
+    .skill-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    
+    /* Internship Section */
+    #intern {
+      padding: 100px 0;
+      background-color: #f8f9fa;
+    }
+    
+    .internship-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .internship-card {
+      width: 350px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .internship-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card-header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 15px;
+    }
+    
+    .card-header h3 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+    
+    .card-content {
+      padding: 20px;
+    }
+    
+    .date {
+      font-style: italic;
+      color: #777;
+      margin-bottom: 15px;
+      display: block;
+    }
+    
+    /* Projects Section */
+    #projects {
+      padding: 100px 0;
+      background-color: white;
+    }
+    
+    .projects-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .project-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .project-card:hover .project-image img {
+      transform: scale(1.1);
+    }
+    
+    .project-info {
+      padding: 20px;
+    }
+    
+    .project-title {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+    
+    .project-description {
+      margin-bottom: 15px;
+    }
+    
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .tech-tag {
+      background-color: #e9ecef;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .project-link {
+      display: inline-block;
+      padding: 8px 15px;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    
+    .project-link:hover {
+      background-color: var(--secondary-color);
+    }
+    
+    /* Contact Section */
+    #contact {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+    }
+    
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 50px;
+    }
+    
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item:hover {
+      transform: translateY(-10px);
+    }
+    
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--accent-color);
+    }
+    
+    .contact-text {
+      font-size: 1.1rem;
+    }
+    
+    .contact-text a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-text a:hover {
+      color: var(--accent-color);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-bg);
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 30px 0;
+    }
+    
+    .social-link {
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      color: var(--accent-color);
+      transform: translateY(-5px);
+    }
+    
+    .footer-text {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav a {
+        padding: 15px 10px;
+        font-size: 16px;
+      }
+      
+      .container h1 {
+        font-size: 2.5rem;
+      }
+      
+      .container h2 {
+        font-size: 2rem;
+      }
+      
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+      
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <nav>
+  <!-- Navigation -->
+  <nav id="navbar">
     <a href="#home">Home</a>
     <a href="#about">About</a>
-    <a href="#intern">Practium</a>
-    <a href="#madhu">Projects</a>
-    <a href="#final">Contact</a>
+    <a href="#skills">Skills</a>
+    <a href="#intern">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-
-  <div id="home">
+  <!-- Home Section -->
+  <section id="home">
     <div class="container">
       <h4>Hello!, I'M</h4>
-      <h2 class="typing">MADHU SUDHAN MANGALI</h2>
-      <button class="my-button"><a href="M.Madhu Sudhan.pdf">My Resume</a></button>
-  </div>
-  </div>
-  <div id="about">
-  <div class="text">
-    <div class="content">
-      <center><h1>A LITTLE BIT ABOUT ME</h1></center>
-      <p>As a recent graduate, I'm diving headfirst into the world of front-end development with a blend of academic knowledge and fresh enthusiasm. My studies have provided a solid foundation in core web technologies, and I'm eager to apply those skills in a real-world setting. I'm a quick learner, always seeking to expand my understanding of modern front-end practices. My goal is to contribute to creating user-friendly and visually appealing web experiences. I'm passionate about clean, efficient code and staying up-to-date with the latest industry trends. I thrive in collaborative environments and am committed to delivering high-quality work. I'm excited to embark on this new chapter and contribute my dedication to a team. I possess a strong work ethic and am driven to continuously improve my skills. I am ready to absorb knowledge and adapt to the dynamic nature of front-end development. I look forward to the opportunity to learn and grow as a professional.</p>
+      <h1>MADHU SUDHAN MANGALI</h1>
+      <h2 class="typing-text">Frontend Developer</h2>
+      <button class="my-button"><a href="M.Madhu Sudhan.pdf" download>Download Resume</a></button>
     </div>
-    <div class="photo">
-      <img src="image.jpg" alt="Right Side Photo">
-    </div>
-  </div>
-  </div>
-  <div id="intern">
-  <section class="internship">
-    <h2>Intern Experiences</h2>
-    <div class="internship-cards">
-      <div class="internship-card">
-        <div class="card-content">
-          <h3>Web Development Internship-RINEX</h3>
-          <p class="date">Sep 2024 - Oct 2024</p>
-          <p>Developed responsive web interfaces using HTML, CSS, and JavaScript. Contributed to the redesign of the company's homepage, improving user experience and site performance.</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>As a recent graduate, I'm diving headfirst into the world of front-end development with a blend of academic knowledge and fresh enthusiasm. My studies have provided a solid foundation in core web technologies, and I'm eager to apply those skills in a real-world setting.</p>
+          <p>I'm a quick learner, always seeking to expand my understanding of modern front-end practices. My goal is to contribute to creating user-friendly and visually appealing web experiences. I'm passionate about clean, efficient code and staying up-to-date with the latest industry trends.</p>
+          <p>I thrive in collaborative environments and am committed to delivering high-quality work. I'm excited to embark on this new chapter and contribute my dedication to a team. I possess a strong work ethic and am driven to continuously improve my skills.</p>
+        </div>
+        <div class="about-image">
+          <img src="image.jpg" alt="Madhu Sudhan Mangali">
         </div>
       </div>
-      <div class="internship-card">
-        <div class="card-content">
-          <h3>Python Full-Stack Development-ExcelR</h3>
-          <p class="date">July 2024 - October 2024</p>
-          <p>Created wireframes and mockups for new website features. Collaborated with the design team to ensure visual consistency across the platform.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="skills-container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+          <div class="skill-name">HTML5</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+          <div class="skill-name">CSS3</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-js"></i></div>
+          <div class="skill-name">JavaScript</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-bootstrap"></i></div>
+          <div class="skill-name">Bootstrap</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-react"></i></div>
+          <div class="skill-name">React</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-python"></i></div>
+          <div class="skill-name">Python</div>
         </div>
       </div>
-      <div class="internship-card">
-        <div class="card-content">
-          <h3>Salesforce Developer Internship - APSCHE</h3>
-          <p class="date">May 2023 - July 2023</p>
-          <p>Gain hands-on skills in Salesforce development through real- world projects and assignments.
-            Acquire in-demand abilities like Apex coding and Lightning Web Components development.
-            Engage with mentors and peers for networking and learning opportunities.</p>
+    </div>
+  </section>
+
+  <!-- Internship Section -->
+  <section id="intern">
+    <div class="container">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="internship-cards">
+        <div class="internship-card">
+          <div class="card-header">
+            <h3>Web Development Internship - RINEX</h3>
+          </div>
+          <div class="card-content">
+            <span class="date">Sep 2024 - Oct 2024</span>
+            <p>Developed responsive web interfaces using HTML, CSS, and JavaScript. Contributed to the redesign of the company's homepage, improving user experience and site performance.</p>
+            <ul>
+              <li>Implemented modern UI components</li>
+              <li>Optimized website performance</li>
+              <li>Collaborated with design team</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="internship-card">
+          <div class="card-header">
+            <h3>Python Full-Stack Development - ExcelR</h3>
+          </div>
+          <div class="card-content">
+            <span class="date">July 2024 - October 2024</span>
+            <p>Created wireframes and mockups for new website features. Collaborated with the design team to ensure visual consistency across the platform.</p>
+            <ul>
+              <li>Developed backend APIs</li>
+              <li>Implemented database solutions</li>
+              <li>Tested and debugged applications</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="internship-card">
+          <div class="card-header">
+            <h3>Salesforce Developer Internship - APSCHE</h3>
+          </div>
+          <div class="card-content">
+            <span class="date">May 2023 - July 2023</span>
+            <p>Gained hands-on skills in Salesforce development through real-world projects and assignments. Acquired in-demand abilities like Apex coding and Lightning Web Components development.</p>
+            <ul>
+              <li>Developed custom Salesforce solutions</li>
+              <li>Worked with Apex and LWC</li>
+              <li>Participated in team projects</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="projects-container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Solar Energy Project">
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Solar Renewable Energy</h3>
+            <p class="project-description">A communication skill project exploring solar renewable energy potential, focusing on disseminating information about its benefits, challenges, and future prospects.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Research</span>
+              <span class="tech-tag">Presentation</span>
+              <span class="tech-tag">Sustainability</span>
             </div>
+            <div class="project-links">
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="IoT Water Monitoring">
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">IoT Water Quality Monitoring</h3>
+            <p class="project-description">Developed a smart water monitoring solution using ESP32 with pH, turbidity, and temperature sensors providing real-time water quality analysis via IoT cloud integration.</p>
+            <div class="project-tech">
+              <span class="tech-tag">IoT</span>
+              <span class="tech-tag">ESP32</span>
+              <span class="tech-tag">Cloud</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Portfolio Website">
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Personal Portfolio Website</h3>
+            <p class="project-description">A responsive portfolio website built with HTML, CSS, and JavaScript to showcase my projects, skills, and experience with modern design and animations.</p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">View Project</a>
+              <a href="#" class="project-link">View Code</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="madhu">
-  <center id="project"><h3 class="animated-color">Projects</h3></center>
-    <div class="hero">
-      <div class="man">   
-        <h2>Solar Renewable Energy: A Communication Skill Project</h2>
-        <p>This project aims to enhance communication skills by exploring the potential of solar renewable energy. We focus on disseminating information about its benefits, challenges, and future prospects.</p>
-        <p>Key aspects include:</p>
-        <ul>
-          <li>Developing clear and engaging content about solar technology.</li>
-          <li>Creating visual aids to explain complex concepts.</li>
-          <li>Practicing effective presentation skills to diverse audiences.</li>
-          <li>Analyzing the impact of solar energy on environmental sustainability.</li>
-          <li>Collaborating with team members to achieve project goals.</li>
-        </ul>
-        <p>By focusing on these elements, we not only improve our communication skills but also contribute to raising awareness about sustainable energy solutions.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact-container">
+      <h2 class="section-title" style="color: white;">Get In Touch</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 30px;">Feel free to reach out for collaborations or just a friendly hello!</p>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text"><a href="mailto:mmadhusudhan807@gmail.com">mmadhusudhan807@gmail.com</a></div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-text"><a href="tel:+919390898773">+91 9390898773</a></div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-text">Hyderabad, India</div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<div id="final">
-    <center><h3>Contact Info</h3></center>
-    <div class="conta">
-      <div class="box"><a href="mailto:mmadhusudhan807@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a></i></div>
-      <div class="box"><a href="https://www.linkedin.com/in/madhusudhanmangali/" target="_blank"><i class="fa-brands fa-linkedin-in"></a></i></div>
-      <div class="box"><a href="https://github.com/MadhuSudhan2310" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
-      </div>
-  </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <h2>MADHU SUDHAN MANGALI</h2>
-    <p class="footer-text">Web Developer | Designer | Content Creator</p>
+    <h3>MADHU SUDHAN MANGALI</h3>
+    <p>Web Developer | Designer | Content Creator</p>
+    
     <div class="social-links">
-<a href="https://www.instagram.com/_mr.ms_23_?utm_source=qr&igsh=dnFheDBlZTVnc3li" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-  <a href="to:+919390898773" target="_blank"><i class="fa-solid fa-phone-volume"></i></a>
-  <a href="https://wa.me/9390898773" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-</div>
-    <p class="footer-text">&copy; 2025. All rights reserved.</p>
-  </div></div>
-</footer>
+      <a href="https://www.linkedin.com/in/madhusudhanmangali/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/MadhuSudhan2310" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/_mr.ms_23_?utm_source=qr&igsh=dnFheDBlZTVnc3li" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/9390898773" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    
+    <p class="footer-text">&copy; 2025 Madhu Sudhan Mangali. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Animation on scroll
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.skill-card, .internship-card, .project-card, .contact-item');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (elementPosition < screenPosition) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    
+    // Initialize elements with opacity 0 and slight offset
+    document.querySelectorAll('.skill-card, .internship-card, .project-card, .contact-item').forEach(element => {
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(20px)';
+      element.style.transition = 'all 0.6s ease';
+    });
+    
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+    
+    // Typing animation for multiple texts
+    const texts = ["Frontend Developer", "Web Designer", "Content Creator"];
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+    
+    (function type() {
+      if (count === texts.length) {
+        count = 0;
+      }
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      
+      document.querySelector(".typing-text").textContent = letter;
+      if (letter.length === currentText.length) {
+        setTimeout(() => {
+          count++;
+          index = 0;
+          setTimeout(type, 500);
+        }, 2000);
+      } else {
+        setTimeout(type, 100);
+      }
+    })();
+  </script>
 </body>
 </html>
